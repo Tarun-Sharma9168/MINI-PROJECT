@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Cambria;}{\f1\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue0;}
+{\*\generator Riched20 10.0.17763}\viewkind4\uc1 
+\pard\cf1\f0\fs24\lang9\par
+
+\pard\sa200\sl276\slmult1    \b\f1\fs22 BANK CHAT BOT \endash  An Intelligent Assistant System Using NLP and Machine Learning\par
+
+\pard  \b0\f0\fs24\par
+\f1\fs22  Chat bots are intelligent systems that understand user\rquote s natural language queries and respond accordingly in a conversation.The primary goal of this chat bot is, customer can interact with mentioning their queries in plain English and the chat bot can resolve their queries with appropriate response in return\f0\fs17 . \fs24\par
+ \par
+ \f1\fs22 Banks play an important role in every country\rquote s economic development.There are different types of platforms provided by different banks but people are facing problems accessing them(different GUIs, too much navigation).  People have queries about various bank policies,\par
+loans, fixed deposits. This results in unnecessary crowd in banks for inquiry. Banks also face problems solving repeated queries of customers. \par
+A chat bot is a conversational agent that interacts with users in a certain domain on certain topic with natural language sentences.These are the software with artificial intelligence which allows them to understand users input and provide meaningful response using predefined knowledge base.\par
+\par
+\ul Chat Bot for Banks\par
+\cf0\ulnone Developing a chat bot will provide a smart solution to solve these queries, provide information as and when required, improve service and increase number of customers. It removes human factors included in organization and can give 24/7 hours\par
+service to increase productivity\ul .\par
+\ulnone Current chat bots are developed using variety of methods like rule based where rules are hard-coded in code, AI based bots,pattern-based which can handle only mentioned patterns for retrieving answer. There are frameworks available for developing chat bots but they also use either rule-based or pattern-based techniques\ul .\par
+ \par
+Architecture\par
+\ulnone User will interact with the system using web application.He will enter his query in text box provided on front end of this web application. Once he presses Enter button or submit the\par
+query, this request will be handled by bot controller logic.\par
+The bot controller logic contains implementation of Flask framework for handling user requests and sending answer to those queries as response. Then, the query will be sent to Business logic and Machine learning logic. Business logic contains pre-processing of user input query using Natural Language Processing (NLTK library) and its vectorization. NLP will tokenize the query, remove unnecessary spaces, stop-words and then extract lemmas for each token. Then this text-format query will be converted to vectorized format using\par
+vectorization. Now, using ML logic, classification algorithm will be applied to this transformed query to find the class it belongs to. Classification algorithm will be applied based on the previous saved model executed on train data. All questions from input data having class equal to retrieved class will be fetched and cosine similarity\par
+will be applied to these. According to similarity values we get, most similar answer will be returned to user as response.\par
+\par
+ \ul Feedback System\par
+\ulnone There are situations where chat bot cannot give right answer or cannot have answer to asked question because the question is out of database. For such circumstances, we have developed feedback mechanism for our chat bot. Web application will have Dislike\par
+button along with submit button. If in case user is not satisfied with the answer provided by system, he can press this Dislike button.\par
+\par
+ \ul Implementation\par
+\ulnone 1) Preparing Data Set\par
+2) Pre-processing:Steps included in this task are:\par
+Tokenization - We have used tokenization to generate sequence of words from user\rquote s input query.\par
+Removing stop words - Most of the common words like \rquote want\rquote , \rquote are\rquote , \rquote can\rquote , which we don\rquote t need to be considered while processing are re-moved for improving the performance of system.\par
+Lemmatization - We have used WordNet Lemma-tizer for getting lemma (root form of\par
+the word) of each token. e.g. \rquote processing\rquote  and \rquote process\rquote  should be considered equal while\par
+processing. So for getting \rquote process\rquote  from \rquote processing\rquote , lemmatization is used.\par
+3) Vectorization:BOG is a method for preparing text for input to our machine learning algorithm. BOG model develops a vocabulary from all of the documents and then model\par
+each document by counting number of times each word appearing in respective document.\par
+4) Classification:We have used classification to improve the efficiency by reducing the response time required to get the answer. We have used Scikit-learn library for implementing these classifiers. Scikit-learn is tool for data mining and machine\par
+learning in Python. The subset of classifiers include:\par
+a)Decision Tree classifier\par
+ b)Bernoulli Naive Bayes Classifier\par
+c) Gaussian Naive Bayes Classifier\par
+d) K-nearest neighbor classifier\par
+e) Multinomial Naive Bayes classifier\par
+f) Random Forest classifier\par
+g) Support vector machine\par
+Also, for optimizing the algorithm\rquote s performance according to our data set, we have implemented parameter optimization. There are two approaches for\par
+implementing parameter optimization.\par
+i.Grid search - Grid search is simply exhaustive searching approach. In grid search, it is needed to manually specify subset of hyper-parameter space of a learning model.Hyper-parameters are the parameters that are not directly learned within estimators.\par
+ii. Randomized Search- In randomized search, it samples parameter settings a fixed number of times that are more effective. \par
+5) Developing learning model : In this phase, we have combined Natural Language processing, Vectorization and classification algorithms all together and save this model for further use. So, whenever the new query comes to system, we will just fetch this saved model,test this query on that model and get its class.\par
+6) Testing model : Checking for cross-validation score and precision and recall score of each classification algorithm, so that we can choose best for final use.\par
+7) Choosing best approach\par
+8) Query mapping and getting answer(Using Cosine similarity ) : Once classifier gives us the class, we extract all questions that have this class from our data set. We check for cosine similarity of user\rquote s query with these extracted questions. Then answer of the most similar question is chosen as response to user\rquote s query and is returned to him.\par
+\par
+\ul Experimental Results\par
+\ulnone Experiment 1:We have tried different queries to validate the implementation of Bank Chat Bot. In this experiment, we have entered queries which are similar to the questions present in our data set.\par
+ Experiment 2:In this experiment, we have tried same query in different forms. e.g. Query to open an account in bank can be asked in different ways like :\par
+1) steps for opening account\par
+2) process for opening account\par
+3) how to open an account\par
+4) i want to open account\par
+5) opening account\par
+6) procedure for opening an account in bank\par
+\par
+\ul Conclusion\par
+\ulnone The proposed system would be a stepping stone in having in place an intelligent query handling program which could in next phases not just respond but self-learn to improve itself thereby increasing not just the quality of customer service but also reducing human load, increase in productivity and of course increasing number of satisfied customers\ul .\par
+}
+ 
